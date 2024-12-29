@@ -7,13 +7,13 @@
 // Tried a 45deg stacking shape, but it didn't feel nice when stacked, want it to feel more purposefully together
 // Now fully drawing the whole shape as a polygon, simpler than differencing repeats.
 
-emboss = 0.5;
+emboss = 0;
 smoothness = 200;
 
-radius = 45; // total outer radius
-wall = 1; // upper wall thikness
-base = 1; // base thickness
-insert_thick = 1;
+radius = 46; // total outer radius
+wall = 2; // upper wall thikness
+base = 2; // base thickness
+insert_thick = 1.6;
 insert_radius = 43;
 
 gohu = "GohuFont 14 Nerd Font";
@@ -28,8 +28,8 @@ font_size = 12;
 module x_poly(){
     polygon(points=[
         [0              ,0], // Bottom centre-point
-        [radius - wall - 0.1, 0], // Bottom outer edge
-        [radius - wall - 0.1, base], // The vertical lower out wall 
+        [radius - wall - 0.2, 0], // Bottom outer edge
+        [radius - wall - 0.2, base], // The vertical lower out wall 
         [radius         , base + wall], // The 45deg outer wall
         [radius         , base + wall + wall], // The vertical top outer wall
         [radius - wall  , base + wall + wall], // Top inner edge
@@ -45,7 +45,7 @@ module build(){
         cube(100, center=true);
         difference(){
             rotate_extrude($fn=smoothness) x_poly();
-            translate([0,0,base-emboss]) linear_extrude(height=2) text(text="mun", size=20, halign="center", valign="center", font=f);
+            translate([0,0,0.8]) linear_extrude(height=0.8) text(text="mun", size=20, halign="center", valign="center", font=f);
         }
     }
 }
