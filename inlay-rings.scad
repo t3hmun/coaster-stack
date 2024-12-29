@@ -1,17 +1,9 @@
-// Stacking coasters with text design
-// Raised sides to contain small spills
+// Rings inlay for coaster - print in another colour and insert.
 
-// Don't use the OpenSCAD 2021.x, rendering is silly slow. 
-// Download a nighly version (2024.x or newer) and then in `Preferences>Avanced` select `3D Rendering>Backend>Manifold`, now rendering is instant.
-
-// Tried a 45deg stacking shape, but it didn't feel nice when stacked, want it to feel more purposefully together
-// Now fully drawing the whole shape as a polygon, simpler than differencing repeats.
-
-emboss = 0.5;
 smoothness = 200;
 
 radius = 43; // total outer radius
-height = 1;
+height = 1.6;
 
 
 module ring(r, t){
