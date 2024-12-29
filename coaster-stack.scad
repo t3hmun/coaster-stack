@@ -7,6 +7,8 @@
 // Tried a 45deg stacking shape, but it didn't feel nice when stacked, want it to feel more purposefully together
 // Now fully drawing the whole shape as a polygon, simpler than differencing repeats.
 
+// All printing is done with a 0.2 layer height, so stepping vertical sizes by 0.2mm - so don't use 1.5mm.
+
 emboss = 0;
 smoothness = 200;
 
@@ -28,8 +30,8 @@ font_size = 12;
 module x_poly(){
     polygon(points=[
         [0              ,0], // Bottom centre-point
-        [radius - wall - 0.2, 0], // Bottom outer edge
-        [radius - wall - 0.2, base], // The vertical lower out wall 
+        [radius - wall - 0.3, 0], // Bottom outer edge
+        [radius - wall - 0.1, base], // The vertical lower out wall 
         [radius         , base + wall], // The 45deg outer wall
         [radius         , base + wall + wall], // The vertical top outer wall
         [radius - wall  , base + wall + wall], // Top inner edge
@@ -45,7 +47,8 @@ module build(){
         cube(100, center=true);
         difference(){
             rotate_extrude($fn=smoothness) x_poly();
-            translate([0,0,0.8]) linear_extrude(height=0.8) text(text="mun", size=20, halign="center", valign="center", font=f);
+            // trying to make the top and bottom of the hollow only 0.2mm (1 layer) creates artifacts on the base and top.
+            translate([0,0,0.4]) linear_extrude(height=1.4) text(text="mun", size=20, halign="center", valign="center", font=f);
         }
     }
 }
