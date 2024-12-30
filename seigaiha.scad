@@ -5,7 +5,7 @@ feat_smoothness = 200;
 feat_thick = 1;
 
 radius = 43; // total outer radius
-height = 1.6;
+height = 1;
 
 
 union(){
