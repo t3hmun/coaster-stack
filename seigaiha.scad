@@ -4,7 +4,7 @@ smoothness = 200;
 feat_smoothness = 200;
 feat_thick = 1;
 
-radius = 43; // total outer radius
+radius = 43 - 0.2; // total outer radius - a little bit so that it fits - these designs seem to expand a bit
 height = 1;
 
 
