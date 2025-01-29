@@ -1,6 +1,6 @@
 
 // TODO:
-// [ ] Add the taper to the base that exists in coaster-stack.scad, this allows it top stack smoothly without getting stuck.
+// [x] Add the taper to the base that exists in coaster-stack.scad, this allows it top stack smoothly without getting stuck.
 // [x] Either fix the radius to fit the inlay-rings or make a new one to fit this.
 // [ ] Decorative arches in the overhang slope
 // [x] Tiny loop-holes? Maybe too small.
@@ -25,8 +25,8 @@ wall_segments = 20; // If you change this number straight_cren_set() and offset 
 module base_poly(){
     polygon(points = [
         [0,0], 
-        [base_radius, 0], 
-        [base_radius, base_thickness], 
+        [base_radius - 0.3, 0], 
+        [base_radius - 0.1, base_thickness], 
         [base_radius + wall_overhang_w, base_thickness + wall_overhang_h],
         [base_radius + wall_overhang_w, base_thickness + wall_overhang_h + wall_height],
         [base_radius , base_thickness + wall_overhang_h + wall_height],
