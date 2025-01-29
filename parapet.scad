@@ -3,7 +3,9 @@
 // [x] Add the taper to the base that exists in coaster-stack.scad, this allows it top stack smoothly without getting stuck.
 // [x] Either fix the radius to fit the inlay-rings or make a new one to fit this.
 // [ ] Decorative arches in the overhang slope
-// [x] Tiny loop-holes? Maybe too small.
+// [x] Tiny arrow slits
+//     [ ] Add the taper on the inside of the arrow slits
+// [ ] Merlon caps
 
 
 base_radius = 43;
