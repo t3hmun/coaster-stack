@@ -1,4 +1,11 @@
 
+// TODO:
+// - Add the taper to the base that exists in coaster-stack.scad, this allows it top stack smoothly without getting stuck.
+// - Either fix the radius to fit the inlay-rings or make a new one to fit this.
+// - Decorative arches in the overhang slope
+// - Tiny loop-holes? Maybe too small.
+
+
 base_radius = 40;
 base_thickness = 2;
 wall_thickness = 4;
