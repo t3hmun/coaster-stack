@@ -4,7 +4,7 @@
 // [x] Either fix the radius to fit the inlay-rings or make a new one to fit this.
 // [ ] Decorative arches in the overhang slope
 // [x] Tiny arrow slits
-//     [ ] Add the taper on the inside of the arrow slits
+//     [x] Add the taper on the inside of the arrow slits
 // [ ] Merlon caps
 
 
