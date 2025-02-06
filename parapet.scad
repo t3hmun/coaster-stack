@@ -8,19 +8,19 @@
 // [ ] Merlon caps
 
 
-base_radius = 43;
+base_radius = 46;
 base_thickness = 1;
 wall_thickness = 4;
 
 merlon_h = 3;
-crenel_h = 4;
+crenel_h = 2;
 
 crenel_w =3; // If you change this number straight_cren_set() will need adjusting
 merlon_w = 4.5;
 wall_height = merlon_h + crenel_h;
 wall_overhang_w = 3;
 wall_overhang_h = 3;
-insert_radius = 38;
+insert_radius = 43;
 
 
 wall_segments = 10; // If you change this number straight_cren_set() and offset will need adjusting
@@ -42,7 +42,10 @@ module base_poly(){
 }
 
 module base(){
-    rotate ([0,0,0]) rotate_extrude($fn=wall_segments) base_poly();
+    difference(){    
+        rotate ([0,0,0]) rotate_extrude($fn=wall_segments) base_poly();
+        translate([0,0,base_thickness-0.1]) cylinder(r=insert_radius, h=30, $fn=500);
+    }
 }
 
 module crenel_cut() {
@@ -111,7 +114,7 @@ module embrasure_cut() {
 
 
 module stamp(){
-    translate([-9.1,-2.6,base_thickness -1 ]) linear_extrude(3) text("mun", size=10, font="ProggyClean Nerd Font");
+    translate([-9.1,-2.6,base_thickness-0.99  ]) linear_extrude(3) text("mun", size=10, font="ProggyClean Nerd Font");
 }
 
 module crenelated_base() {
@@ -123,7 +126,6 @@ module crenelated_base() {
         stamp();
     }
 }
-
 
 //base_poly();
 //crenel_cut();
