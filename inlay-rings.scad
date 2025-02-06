@@ -2,8 +2,8 @@
 
 smoothness = 200;
 
-radius = 43; // total outer radius
-height = 1;
+radius = 43-0.1; // total outer radius
+height = 1.4;
 
 
 module ring(r, t){
